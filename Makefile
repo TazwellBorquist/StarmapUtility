@@ -76,3 +76,7 @@ nuke:
 printfiles:
 	@ECHO List of files that are compiled:
 	@$(foreach OBJ, $(OBJS),ECHO $(OBJ);)
+
+.PHONY: gitaddsource
+gitaddsource:
+	git add source
