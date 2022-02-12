@@ -8,13 +8,18 @@
 
 #include <iostream>
 #include <fstream>
+
 #include <random>
+
 #include <string>
+
 #include <memory>
 
 #include <mutex>
 #include <thread>
 
 #include <cmath>
+
+#include <cfenv>
 
 #endif
