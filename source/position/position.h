@@ -25,24 +25,15 @@ public:
         \param toCopy A refrence to a Position class to copy m_x, m_y, and m_z from */
     Position(Position &toCopy);
 
-    /** \brief Copy constructor
-        \param toCopy A pointer to a Position class to copy m_x, m_y, and m_z from */
-    Position(Position *toCopy);
-
     /** \brief Copies the data from the passed Position to this.
         \param toCopy a pointer to the Position class to copy.
-        \return Returns 0 on a successful copy. Returns -1 if toCopy is NULL. */
-    int copy(Position *toCopy);
+        \return Returns 0 on a successful copy. */
+    int copy(Position &toCopy);
 
     /** \brief Calculates the straight-line distance from this position to the passed position.
         \param pos2 A refrence to another Position object.
         \return Returns the distance to the other Position on success. Returns <0.0d on failure. */
     double distanceTo(Position &pos2);
-
-    /** \brief Calculates the straight-line distance from this position to the passed position.
-        \param pos2 A pointer to another Position object.
-        \return Returns the distance to the other Position on success. Returns <0.0d on failure. */
-    double distanceTo(Position *pos2);
 
     /** \brief Calculates the straight-line distance from this position to the passed position.
         \param x The X coordinate to measure distance to.
@@ -53,45 +44,54 @@ public:
 
     /** \brief Gets the X coordinate.
         \return Returns the value of m_x. */
-    double getX();
+    double getx();
 
     /** \brief Gets the Y coordinate.
         \return Returns the value of m_y. */
-    double getY();
+    double gety();
 
     /** \brief Gets the Z coordinate.
         \return Returns the value of m_z. */
-    double getZ();
+    double getz();
 
     /** \brief Sets the X coordinate.
         \param x Value to set m_x to.
         \return Returns 0*/
-    int setX(double x);
+    int setx(double x);
 
     /** \brief Sets the Y coordinate.
         \param y Value to set m_y to.
         \return Returns 0*/
-    int setY(double y);
+    int sety(double y);
 
     /** \brief Sets the Z coordinate.
         \param z Value to set m_z to.
         \return Returns 0*/
-    int setZ(double z);
+    int setz(double z);
 
     /** \brief Moves the X coordinate.
-        \return Returns the new value of m_x.
-    	\param x The value to add to m_x. */
-	double moveX(double x);
+    	\param x The value to add to m_x.
+        \return Returns the new value of m_x. */
+	double movex(double x);
 
     /** \brief Moves the Y coordinate.
-        \return Returns the new value of m_y.
-    	\param y The value to add to m_y. */
-	double moveY(double y);
+    	\param y The value to add to m_y.
+        \return Returns the new value of m_y. */
+	double movey(double y);
 
     /** \brief Moves the Z coordinate.
-        \return Returns the new value of m_z
-    	\param z The value to add to m_z. */
-	double moveZ(double z);
+    	\param z The value to add to m_z.
+        \return Returns the new value of m_z */
+	double movez(double z);
+
+    /** \brief Calculates and returns the difference between this and the passed Position's x value. */
+	double diffx(Position &pos);
+
+    /** \brief Calculates and returns the difference between this and the passed Position's y value. */
+	double diffy(Position &pos);
+
+    /** \brief Calculates and returns the difference between this and the passed Position's z value. */
+	double diffz(Position &pos);
 
 private:
     double m_x, m_y, m_z; /**< The x, y, and z coordinates. */

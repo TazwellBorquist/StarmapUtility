@@ -20,6 +20,4 @@
 
 #include <cmath>
 
-#include <cfenv>
-
 #endif
